@@ -1,8 +1,15 @@
-AllProjects
+AgileVentures
 ===========
 
 Top level Agile Ventures site with support for all projects
 =======
+Below is the readme for angularjs seed which we are using to prototype the app.  We're pulling in Cucumberjs to test.  
+For debugging we've found this works:
+
+node debug node_modules/.bin/cucumber features/new_developer.feature
+
+
+----------
 # angular-seed — the seed for AngularJS apps
 
 This project is an application skeleton for a typical [AngularJS](http://angularjs.org/) web app.
