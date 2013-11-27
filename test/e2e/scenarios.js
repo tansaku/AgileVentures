@@ -13,6 +13,11 @@ describe('my app', function() {
     expect(browser().location().url()).toBe("/view1");
   });
 
+  it('should display the title Agile Ventures', function() {
+    debugger;
+    expect(element('title').text()).toBe("Agile Ventures");
+  });
+
 
   describe('view1', function() {
 

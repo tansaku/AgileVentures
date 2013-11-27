@@ -5,6 +5,7 @@ Feature: New developer looking to get started with an Agile Ventures project
 
   Scenario: Home page
     Given I am on the home page
+    Then the title should be "Agile Ventures"
     Then I should see a mission statement
     And I should see links to projects that I can join
     And I should see an invitation to connect with us

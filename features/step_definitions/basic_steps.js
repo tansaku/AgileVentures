@@ -6,11 +6,17 @@ var basicStepDefinitionsWrapper = function () {
      this.visit('http://localhost:8000/app/index.html', callback);
   });
 
+  this.Then(/^the title should be "([^"]*)"$/, function(title, callback) {
+    if (this.browser.text('title').indexOf(title) !== -1) {
+      callback();
+    } else {
+      callback.fail(new Error("Expected to be on page with title " + title));
+    }
+  });
+
   this.Then(/^I should see a mission statement$/, function(callback) {
     // express the regexp above with the code you wish you had
-    var pageBody = this.browser.text('body');
-    debugger;
-    if (pageBody.indexOf("Mission Statement") !== -1) {
+    if (this.browser.text('body').indexOf("Mission Statement") !== -1) {
       callback();
     } else {
       callback.fail(new Error("Expected to be on page with mission statement " + pageBody));
@@ -19,7 +25,11 @@ var basicStepDefinitionsWrapper = function () {
 
   this.Then(/^I should see links to projects that I can join$/, function(callback) {
     // express the regexp above with the code you wish you had
-    callback.pending();
+    if (this.browser.text('a[href="project1"]').indexOf("Project 1") !== -1) {
+      callback();
+    } else {
+      callback.fail(new Error("Expected to have a project1 link "));
+    }
   });
 
   this.Then(/^I should see an invitation to connect with us$/, function(callback) {
