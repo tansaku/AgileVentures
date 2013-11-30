@@ -9,6 +9,6 @@
     "karma-jasmine" : "~0.1",
     "karma-ng-scenario" : "~0.1",
     "cucumber": "latest",
-    "cucumber": "zombie"
+    "zombie": "latest"
   }
 }
